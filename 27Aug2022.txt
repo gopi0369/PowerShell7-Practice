@@ -1,0 +1,61 @@
+
+  Id     Duration CommandLine
+  --     -------- -----------
+   1        2.378 cd f:/
+   2        0.089 ls
+   3        0.029 Get-ChildItem -Name
+   4        0.024 Get-ChildItem -System
+   5        0.107 Get-ChildItem -Mode
+   6       52.535 Get-ChildItem -Path F:\RaveeSys-backup\*.txt -Recurse -Force
+   7        0.176 clear
+   8        0.025 Get-ChildItem -Path F:\RaveeSys-backup\Downloads\ -Force
+   9        0.106 cls
+  10        2.382  Get-Command *item*
+  11        0.079 clear
+  12        0.025 cd c:\
+  13        2.292 $Location = "F:\folder1"
+  14        0.025 Get-ChildItem -Force $Location
+  15        2.450 Get-ChildItem -Force $Location -Recurse
+  16        0.403 Get-ChildItem -Path $Location -Recurse -Include *.xlsx
+  17        0.204 Get-ChildItem -Path $Location -Recurse -Exclude *.xlsx
+  18        0.037 Get-ChildItem -Path $Location -Recurse -Include *.png
+  19        2.649 Get-ChildItem -Path $Location -Recurse | Where-Object -FilterScript {($_.LastWriteTime -gt '20-08-2022') }
+  20        0.323 Get-ChildItem -Path $Location -Recurse | Where-Object -FilterScript {($_.LastWriteTime -gt '20/08/2022') }
+  21        0.083 Get-Date
+  22        0.025 $Date = Get-Date
+  23        0.025 $Date.Year
+  24        0.027 $Date.Kind
+  25        0.026 $Date.DayOfWeek
+  26        0.025 $Date.DayOfYear
+  27        0.031 $Date.Date
+  28        0.089 Get-ChildItem -Path $Location -Recurse | Where-Object -FilterScript {($_.LastWriteTime -gt '20 August 2022') }
+  29        2.363 New-Item -Path "$($Location)\Tesst1" -ItemType Directory 
+  30        0.014 New-Item -Path "$($Location)\Tesst1" -ItemType Directory 
+  31        0.052 New-Item -Path "$($Location)\Tesst1\tesst.txt" -ItemType File 
+  32        0.013 New-Item -Path "$($Location)\Tesst1" -ItemType Directory 
+  33        0.013 New-Item -Path "$($Location)\Tesst1" -ItemType Directory 
+  34        0.037 New-Item -Path "$($Location)\Tesst1" -ItemType Directory -Force
+  35        0.081 clear
+  36        2.352 $DocumentTest = "Poda poda punnaku podatha thappu kannAKKU"
+  37        0.034 $DocumentTest
+  38        0.052 $DocumentTest |Out-File -FilePath "$($Location)\tesst\tesst.txt"
+  39        0.039 $DocumentTest |Out-File -FilePath "$($Location)\Tesst\Tesst.txt"
+  40        0.040 $DocumentTest |Out-File -FilePath "$($Location)\Tesst\tesst.txt"
+  41        0.027 $DocumentTest |Out-File -FilePath "$($Location)\Tesst1\tesst.txt"
+  42        0.080 clear
+  43        0.033 New-Item -Path "$($Location)\Tesst2" -ItemType Directory 
+  44        0.026 New-Item -Path "$($Location)\Tesst2\tesst1.txt" -ItemType File 
+  45        0.026 Remove-Item -Path "$($Location)\Tesst2\tesst1.txt" 
+  46        2.418 Copy-Item -Path "$($Location)\Tesst2\tesst1.txt" -Destination "$($Location)\Tesst1\tesst3.txt"
+  47        0.002 Copy-Item -Path "$($Location)\Tesst2\tesst1.txt" -Destination "$($Location)\Tesst1\tesst3.txt"
+  48        2.312 Get-ChildItem -Path F:\folder1\Tesst1\
+  49        0.000 Get-ChildItem -Path F:\folder1\Tesst1\*.txt |Rename-Item -NewName {$_.Name -replace '\.txt$' '.bak'}
+  50        2.388 Get-ChildItem -Path F:\folder1\Tesst1\*.txt |Rename-Item -NewName {$_.Name -replace '\.txt$','.bak'}
+  51        2.824 1..100 | ForEach-Object {Add-Content -Path F:\folder1\Tesst2\1to100.txt -Value "IceCream $_." }
+  52        0.103 1..100 | ForEach-Object {Add-Content -Path F:\folder1\Tesst2\1to100.txt -Value "IceCream $_" }
+  53        0.468 1..100 | ForEach-Object {Add-Content -Path F:\folder1\Tesst2\1to100.txt -Value "IceCream $_ venuma" }
+  54        0.138 Get-Content -Path F:\folder1\Tesst2\1to100.txt
+  55        2.366 $xmlPath = "F:\folder1\FirstXML.xml"
+  56        2.347 $Xpath = "/breakfast_menu/food/name"
+  57        0.064 Select-Xml -Path $xmlPath -XPath $Xpath | Select-Object -ExpandProperty Node
+
