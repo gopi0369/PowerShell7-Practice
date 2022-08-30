@@ -1,0 +1,34 @@
+
+  Id     Duration CommandLine
+  --     -------- -----------
+   1        0.065 Get-Command *PSremoting*
+   2     1:27.011 Enable-PSRemoting -WhatIf
+   3        0.078 cls
+   4        9.744 Get-PSSessionConfiguration
+   5        0.536 Get-PSSessionConfiguration
+   6        0.117 $session = New-PSSession -ComputerName localhost
+   7        0.608 Get-PSSessionConfiguration
+   8        0.037 $session = New-PSSession -ComputerName localhost
+   9       12.979 Enable-PSRemoting -Force
+  10        0.835 Get-PSSessionConfiguration
+  11        0.397 $session = New-PSSession -ComputerName localhost
+  12        0.016 $session
+  13        0.154 Invoke-Command -Session $session -ScriptBlock {$PSVersionTable}
+  14        0.083 clear
+  15        0.530 Enter-PSSession localhost
+  16        0.427 Enter-PSSession localhost
+  17        0.003 Get-PSSession
+  18        3.675 Invoke-Command -ComputerName localhost -ScriptBlock {Get-computerinfo}
+  19        0.003 $session
+  20        0.009 Remove-PSSession -Session $session
+  21        0.003 $session
+  22        0.065 Get-Command |Where-Object {} | Sort-Object {} | Select-Object Name
+  23        0.084 cls
+  24        0.016 Get-History
+  25        0.000 && ||
+  26        0.006 Write-Host "First Message" && Write-Host "Second Message"
+  27        0.029 Write-Error "Primary Error" && Write-Host "Second Message"
+  28        0.002 Write-Host "First Message" || Write-Host "Second Message"
+  29        2.104 Disable-PSRemoting -Force
+  30        0.033 Get-History >> Out-File 'F:\PS7 Practice\30August2022.txt'
+
