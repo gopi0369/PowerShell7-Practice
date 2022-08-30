@@ -1,0 +1,58 @@
+
+  Id     Duration CommandLine
+  --     -------- -----------
+   4        0.005 Clear-History
+   5        1.039 Get-PSSessionConfiguration
+   6        0.067 clear
+   7        0.647 $session = New-PSSession -ComputerName localhost
+   8        0.017 $session
+   9        0.231 Invoke-Command -Session $session -ScriptBlock {$PSVersionTable}
+  10        0.069 clear
+  11        0.792 Enter-PSSession localhost
+  12        0.436 Enter-PSSession localhost
+  13        0.004 Get-PSSession
+  14        0.066 clear
+  15        3.623 Invoke-Command -ComputerName localhost -ScriptBlock {Get-ComputerInfo}
+  16        0.085 clear
+  17        0.003 $session
+  18        9.127 Remove-PSSession
+  19        0.002 25
+  20        0.003 $session
+  21        3.460 Invoke-Command -ComputerName localhost -ScriptBlock {Get-ComputerInfo}
+  22        0.084 cls
+  23        0.065 Get-Command |Where-Object{}|Sort-Object {}|Select-Object Name
+  24        0.079 clear
+  25        0.008 Write-Host "1" && Write-Host "2"
+  26        0.002 Write-Host "1" || Write-Host "2"
+  27        0.025 Write-Error "1" || Write-Host "2"
+  28        0.022 Write-Error "1" && Write-Host "2"
+  29        0.002 Write-Host "1" || Write-Error "2"
+  30        0.019 Write-Host "1" && Write-Error "2"
+  31        0.022 Write-Error "1" && Write-Error "2"
+  32        0.019 Write-Error "1" || Write-Error "2"
+  33        0.082 ?? ??= ?. ?[]
+  34        0.001 $variable = $null
+  35        0.001 $variable
+  36        0.000 if{$variable -eq $null}
+  37        0.002 if($variable -eq $null)…
+  38        0.098 $variable = Value asdded
+  39        0.001 $variable = "Value Added"
+  40        0.002 if($variable -eq $null)…
+  41        0.003 if($variable -eq $null)…
+  42        0.001 $variable = $null
+  43        0.002 if($variable -eq $null)…
+  44        0.002 if($variable -eq $null){ "No value found"}else{Write-Host "$($variable)"}
+  45        0.001 $variable = "Value Added"
+  46        0.002 if($variable -eq $null){ "No value found"}else{Write-Host "$($variable)"}
+  47        0.001 $variable = $null
+  48        0.002 $variable ?? "No value is found"
+  49        0.001 $variable = "Value Added"
+  50        0.002 $variable ?? "No value is found"
+  51        0.003 $location = "F:\PS7 Practice\Testfolder\"
+  52        0.317 $session = New-PSSession -ComputerName localhost
+  53        0.002 $session
+  54        0.142 Invoke-Command -Session $session -ScriptBlock {"$($location)\Remote.ps1"}
+  55        0.024 Invoke-Command -Session $session -FilePath "$($location)\Remote.ps1"
+  56        1.405 Invoke-Command -Session $session -FilePath "$($location)\Remote.ps1"
+  57        1.175 Invoke-Command -Session $session -FilePath "$($location)\Remote.ps1"
+
