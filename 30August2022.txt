@@ -1,0 +1,55 @@
+
+  Id     Duration CommandLine
+  --     -------- -----------
+  26        0.002 Clear-History
+  27        0.121 cls
+  28        0.014 get-history
+  29        0.087 1..100 |ForEach-Object {Add-Content -path C:\Users\Administrator\Desktop\Addcontent.txt -Value "Count $_ .."}
+  30        0.216 Get-Content -Path C:\Users\Administrator\Desktop\Addcontent.txt
+  31        0.010 Select-Xml -path C:\Users\Administrator\Desktop\secondXML.xml -XPath "/lunch_menu/food/name" |Select-Object -ExpandProperty Node
+  32       13.700 Get-Process | Export-Csv -path C:\Users\Administrator\Desktop\process.csv
+  33       14.214 Get-Process | Export-Csv -path C:\Users\Administrator\Desktop\processdelimiter.csv -Delimiter :
+  34       40.406 Get-Process | Export-Clixml -path C:\Users\Administrator\Desktop\processxml.xml
+  35        0.020 $processes = Import-Csv -Path C:\Users\Administrator\Desktop\process.csv
+  36        0.016 $processes1 = Import-Csv -Path C:\Users\Administrator\Desktop\processdelimiter.csv -Delimiter :
+  37        2.827 $processes
+  38        2.053 $processes1
+  39        0.219 $processes | ft
+  40        0.228 $processes1 | ft
+  41        0.338 Import-Csv -Path C:\Users\Administrator\Desktop\process.csv |ForEach-Object {Write-Host "$($_.Product ) $($_.Name) $($_.StartTime)…
+  42        0.103 clear
+  43        0.005 Select-Xml -Path C:\Users\Administrator\Desktop\secondXML.xml -XPath "lunch_menu/food/name" | Select-Object -ExpandProperty Node
+  44        0.002 $lunchMenu =  Select-Xml -Path C:\Users\Administrator\Desktop\secondXML.xml -XPath "lunch_menu/food/name" | Select-Object -ExpandP…
+  45        0.014 $lunchMenu
+  46        2.934 .\systeminfo.exe
+  47        2.758 .\systeminfo.exe /fo CSV |ConvertFrom-Csv |ConvertTo-Json |Out-File -Path C:\Users\Administrator\Desktop\Computerinfo.json
+  48        0.025 Get-Content -Path C:\Users\Administrator\Desktop\Computerinfo.json 
+  49        0.060 Get-Content -Path C:\Users\Administrator\Desktop\Computerinfo.json  |ConvertFrom-Json
+  50        1.377 Get-Content -Path C:\Users\Administrator\Desktop\Computerinfo.json  |ConvertFrom-Json |Out-GridView
+  51        0.003 $JsonObject = Get-Content -Path C:\Users\Administrator\Desktop\Computerinfo.json |ConvertFrom-Json
+  52        0.027 $JsonObject
+  53        0.002 $JsonObject.'Host Name'
+  54        0.002 $JsonObject.'Windows Directory'
+  55        0.083 clear
+  56        0.081 clear
+  57        0.001 $CreatJsonObject = @{}
+  58        0.002 $CreatJsonObject 
+  59        0.004 $arrayList = New-Object System.Collections.ArrayList
+  60        0.129 $arrayList.Add(@{Name=Gopinath;Surname=Elangovan;Gender=Male})
+  61        0.003 $arrayList.Add(@{"Name"="Gopinath";"Surname"="Elangovan";"Gender"="Male"})
+  62        0.002 $arrayList.Add(@{"Name"="Surya";"Surname"="Sivakumar";"Gender"="Male"})
+  63        0.002 $arrayList.Add(@{"Name"="Karthi";"Surname"="Sivakumar";"Gender"="Male"})
+  64        0.002 $arrayList.Add(@{"Name"="Keerthy";"Surname"="Reddy";"Gender"="Female"})
+  65        0.002 $arrayList.Add(@{"Name"="Kavya";"Surname"="Nayar";"Gender"="Female"})
+  66        0.002 $arrayList.Add(@{"Name"="Janani";"Surname"="Iyer";"Gender"="Female"})
+  67        0.010 $arrayList 
+  68        0.002 $Employees = @{"Employees" = $arrayList;}
+  69        0.004 $Employees 
+  70        0.028 $JsonObject.Add("DATA",$Employees)
+  71        0.023 $JsonObject.Add("DATA", $Employees)
+  72        0.024 $JsonObject.Add("Data", $Employees)
+  73        0.003 $CreatJsonObject.Add("Data", $Employees)
+  74        0.002 $CreatJsonObject
+  75        0.005 $CreatJsonObject | ConvertTo-Json -Depth 10
+  76        0.008 $CreatJsonObject | ConvertTo-Json -Depth 10 |Out-File -Path C:\Users\Administrator\Desktop\CreateJsonobject.json 
+

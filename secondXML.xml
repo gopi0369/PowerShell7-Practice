@@ -1,0 +1,32 @@
+<lunch_menu>
+    <food>
+           <name>Biriyani Chiken half</name>
+           <price>$4.99 </price>
+           <description>Thalapakattu tasty chiken biriyani</description>
+           <calories>500 </calories>
+    </food>
+    <food>
+           <name>Biriyani Mutton half</name>
+           <price>$6.99 </price>
+           <description>Tender Mutton Biriyani with Rytha </description>
+           <calories>700 </calories>
+    </food>
+    <food>
+           <name>Biriyani Beef half</name>
+           <price>$5.99 </price>
+           <description>Tasty Arabiyan style Beef Boneless biriyani  </description>
+           <calories>800 </calories>
+    </food>
+    <food>
+           <name>Pork Fry 250g</name>
+           <price>$4 </price>
+           <description>Single pot Tasty Pork fry with 100g rice </description>
+           <calories>350 </calories>
+    </food>
+    <food>
+           <name>Doner Teller</name>
+           <price>$5 </price>
+           <description>Turkie Style Doner Kebab with salad and pommes </description>
+           <calories>600 </calories>
+    </food>
+</lunch_menu>
